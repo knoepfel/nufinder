@@ -14,9 +14,6 @@ cet_cmake_env()
 
 cet_cmake_module_directories(Modules BINARY)
 
-message(STATUS "loading nufinder")
-message(STATUS "nufinder CMAKE_MODULE_PATH: ${CMAKE_MODULE_PATH}")
-
 # source
 add_subdirectory(Modules)
 
