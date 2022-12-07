@@ -17,6 +17,7 @@ Finds GENIE and all its components
 #   -lGPhIBDXS -lGPhIBDEG -lGPhMNucXS -lGPhMNucEG -lGPhMEL -lGPhNuElXS -lGPhNuElEG
 #   -lGPhQELXS -lGPhQELEG -lGPhResXS -lGPhResEG -lGPhStrXS
 #   -lGPhStrEG -lGPhNDcy -lGTlGeo -lGTlFlx -lGTlRew
+# We also need to pick up GPhDNuEG and GPhDNuXS
 
 # headers
 find_file(_cet_Messenger_h NAMES Messenger.h HINTS ENV GENIE_INC
@@ -47,7 +48,10 @@ if (GENIE_FOUND)
                   GPhDISXS GPhDISEG GPhDfrcXS GPhDfrcEG GPhGlwResXS GPhGlwResEG
                   GPhIBDXS GPhIBDEG GPhMNucXS GPhMNucEG GPhMEL GPhNuElXS GPhNuElEG
                   GPhQELXS GPhQELEG GPhResXS GPhResEG GPhStrXS
-                  GPhStrEG GPhNDcy GTlGeo GTlFlx GRwFwk GRwIO GRwClc)
+                  GPhStrEG GPhNDcy
+                  GPhDNuXS GPhDNuXS
+                  GTlGeo GTlFlx
+                  GRwFwk GRwIO GRwClc)
   foreach (_glib IN LISTS _cet_genie_libs)
     find_library(${_glib}_LIBRARY NAMES ${_glib} PATHS ${GENIE_LIBRARY_DIR})
     if(${_glib}_LIBRARY)
