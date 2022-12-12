@@ -8,16 +8,17 @@ Finds GENIE and all its components
 
 #]================================================================]
 
-# this is the order that GENIE "recommends"
+# this is the order that GENIE "recommends" for v3_02_00 and beyond (for now)
 # genie-config --libs
 #   -lGFwMsg -lGFwReg -lGFwAlg -lGFwInt -lGFwGHEP -lGFwNum -lGFwUtl -lGFwParDat
 #   -lGFwEG -lGFwNtp -lGPhXSIg -lGPhPDF -lGPhNuclSt -lGPhCmn -lGPhDcy -lGPhHadTransp
 #   -lGPhHadnz -lGPhDeEx -lGPhAMNGXS -lGPhAMNGEG -lGPhChmXS -lGPhCohXS -lGPhCohEG
-#   -lGPhDISXS -lGPhDISEG -lGPhDfrcXS -lGPhDfrcEG -lGPhGlwResXS -lGPhGlwResEG
-#   -lGPhIBDXS -lGPhIBDEG -lGPhMNucXS -lGPhMNucEG -lGPhMEL -lGPhNuElXS -lGPhNuElEG
-#   -lGPhQELXS -lGPhQELEG -lGPhResXS -lGPhResEG -lGPhStrXS
-#   -lGPhStrEG -lGPhNDcy -lGTlGeo -lGTlFlx -lGTlRew
-# We also need to pick up GPhDNuEG and GPhDNuXS
+#   -lGPhDISXS -lGPhDISEG  -lGPhDfrcXS -lGPhDfrcEG -lGPhHELptnXS -lGPhHELptnEG
+#   -lGPhIBDXS -lGPhIBDEG -lGPhHadTens -lGPhMNucXS -lGPhMNucEG -lGPhMEL -lGPhNuElXS -lGPhNuElEG
+#   -lGPhQELXS -lGPhQELEG -lGPhResXS -lGPhResEG -lGPhStrXS -lGPhStrEG
+#   -lGPhHEDISXS -lGPhHEDISEG -lGPhNDcy -lGPhNNBarOsc -lGPhBDMXS -lGPhBDMEG
+#   -lGPhNHL -lGTlGeo -lGTlFlx
+# We also need to pick up GPhDNuXS and GPhDNuEG
 
 # headers
 find_file(_cet_Messenger_h NAMES Messenger.h HINTS ENV GENIE_INC
@@ -45,11 +46,11 @@ if (GENIE_FOUND)
   set(_cet_genie_libs GFwMsg GFwReg GFwAlg GFwInt GFwGHEP GFwNum GFwUtl GFwParDat
                   GFwEG GFwNtp GPhXSIg GPhPDF GPhNuclSt GPhCmn GPhDcy GPhHadTransp
                   GPhHadnz GPhDeEx GPhAMNGXS GPhAMNGEG GPhChmXS GPhCohXS GPhCohEG
-                  GPhDISXS GPhDISEG GPhDfrcXS GPhDfrcEG GPhGlwResXS GPhGlwResEG
-                  GPhIBDXS GPhIBDEG GPhMNucXS GPhMNucEG GPhMEL GPhNuElXS GPhNuElEG
-                  GPhQELXS GPhQELEG GPhResXS GPhResEG GPhStrXS
-                  GPhStrEG GPhNDcy
-                  GPhDNuXS GPhDNuXS
+                  GPhDISXS GPhDISEG GPhDfrcXS GPhDfrcEG GPhHELptnXS GPhHELptnEG
+                  GPhIBDXS GPhIBDEG GPhHadTens GPhMNucXS GPhMNucEG GPhMEL
+                  GPhNuElXS GPhNuElEG GPhQELXS GPhQELEG GPhResXS GPhResEG
+                  GPhStrXS GPhStrEG GPhHEDISXS GPhHEDISEG GPhNDcy
+                  GPhNNBarOsc GPhBDMXS GPhBDMEG GPhNHL GPhDNuXS GPhDNuEG
                   GTlGeo GTlFlx
                   GRwFwk GRwIO GRwClc)
   foreach (_glib IN LISTS _cet_genie_libs)
