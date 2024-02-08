@@ -12,10 +12,9 @@ include(CetCMakeEnv)
 # nufinder has no architecture dependence
 cet_cmake_env()
 
-cet_cmake_module_directories(Modules BINARY)
+cet_cmake_module_directories(Modules)
 
 # source
 add_subdirectory(Modules)
 
 cet_cmake_config(ARCH_INDEPENDENT)
-
